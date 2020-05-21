@@ -1,7 +1,4 @@
 ##Overview##
 
-This will be simple implementation of the german "Schiffe versenken"
-
-https://de.wikipedia.org/wiki/Schiffe_versenken
-
-##Using it#
+THis is asimple implementation of Conways Game of life. It will start with a random pattern of cells. The 
+rules of Conways are applied on this array.
