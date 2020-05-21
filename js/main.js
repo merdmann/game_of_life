@@ -3,9 +3,6 @@ import * as Common from "../lib/common.js"
 document.addEventListener('DOMContentLoaded', function(event) {
     console.log("game start");
 
-    function clear() {
-
-    }
 
     function show() {
         for (var i = 0; i < 10; ++i)
@@ -36,7 +33,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
     window.setInterval(() => {
         Common.clear();
         show();
-        console.log("redraw")
+        let g = parseInt(document.getElementById("generation").innerText, 10)
+        console.log(typeof(g))
+        g++
+        document.getElementById("generation").innerText = g
         itterrate();
     }, 2000);
 
