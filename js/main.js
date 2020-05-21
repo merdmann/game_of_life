@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 Common.cell[i][j] = Common.getRandomInt(2) === 0 ? 'X' : ' ';
 
                 Common.mark(i, j, Common.cell[i][j] === 'X' ? 'alife' : 'dead');
-
             }
     }
 
@@ -20,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 let x = i % 10;
                 let y = j % 10;
 
-                if (Common.cell[x][y] = 'X') {
-                    Common.cell[x][y] = Common.neighbors(x, y) < 3 ? ' ' : 'X'
-                    Common.cell[x][y] = Common.neighbors(x, y) > 3 ? ' ' : 'X'
+                if (Common.cell[x][y] !== ' ') {
+                    Common.cell[x][y] = Common.neighbors(x, y) < 3 ? 'd' : 'X';
+                    Common.cell[x][y] = Common.neighbors(x, y) > 3 ? 'd' : 'X';
                 }
-                if (cell[x][y] === 'd') {
-                    cell[x][y] = neighbors(x, x) === 3 ? 'X' : ' ';
+                if (cell[x][y] === 'd') { // if dead it will be reansimated
+                    cell[x][y] = neighbors(x, y) === 3 ? 'X' : ' ';
                 }
             }
     }
