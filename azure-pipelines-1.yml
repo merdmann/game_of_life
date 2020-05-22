@@ -15,3 +15,9 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '$(build.sourcesDirectory)'
+    Destination: 'AzureBlob'
+    storage: 'michaelslabwebstore'
+    ContainerName: 'web$'
