@@ -1,10 +1,28 @@
 # HTML
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    subscriptionId: '5f32c139-c39a-4e3f-9cb4-a786b8dc7885'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Home'
+    location: 'Australia Central'
+    templateLocation: 'URL of the file'
+    deploymentMode: 'Incremental'
 # Archive your static HTML project and save it with the build record.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
 trigger:
 - master
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: '7z'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    verbose: true
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -15,3 +33,15 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    subscriptionId: '5f32c139-c39a-4e3f-9cb4-a786b8dc7885'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'Home'
+    location: 'Central US'
+    templateLocation: 'Linked artifact'
+    deploymentMode: 'Complete'
+    deploymentName: 'game_of:_life'
+    addSpnToEnvironment: true
