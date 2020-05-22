@@ -24,6 +24,15 @@ trigger:
     replaceExistingArchive: true
     verbose: true
 
+
+ -task: AzureWebApp@1
+ inputs:
+    azureSubscription: '<Azure service connection>'
+    appName: 'game_of_life'
+    package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
+
+
+
 pool:
   vmImage: 'ubuntu-latest'
 

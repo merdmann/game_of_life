@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
                 if (Common.cell[x][y] !== ' ') {
                     Common.cell[x][y] = Common.neighbors(x, y) < 3 ? 'd' : 'X';
-                    Common.cell[x][y] = Common.neighbors(x, y) > 3 ? 'd' : 'X';
+                    Common.cell[x][y] = Common.neighbors(x, y) > 3 ? 'X' : 'X';
                 }
                 if (cell[x][y] === 'd') { // if dead it will be reansimated
                     cell[x][y] = neighbors(x, y) === 3 ? 'X' : ' ';
