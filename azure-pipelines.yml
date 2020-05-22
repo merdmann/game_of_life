@@ -8,7 +8,7 @@ trigger:
     archiveType: '7z'
     archiveFile: '- task: AzureFileCopy@4
   inputs:
-    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'''
+    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     Destination: 'AzureBlob'
     storage: 'michaelslabwebstore'
     ContainerName: 'web$'
