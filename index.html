@@ -1,32 +1,65 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Conways Game of life</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css" />
     <link rel="icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body>
-    <div class="container">
-        <div class="row"></div>
-        <div class="col-sm">
-            <div id="root" class="world">
+    <div class="container-fluid">
+        <div aria-hidden="false" role="presentation">
+            <script>
+                function HideAllElements(id) {
+                    const elem = document.getElementById(id)
+                    for (let i = 0; i < elem.children.length; ++i) {
+                        let item = elem.children[i];
+                        item.style.display = "none"
+                        console.log(item)
+                    }
+                }
+            </script>
+            <h1>Conways game of Life</h1>
+            <P>Below a 10 by 10 array of cells is shown. Each cell is either alife or dead. Each iterations is counted as so called generation.</P>
+            <div id="references" class="list-group" aria-hidden="false">
+                <p>More information of the game can be found here
+                    <a href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens" class="list-group-item list-group-item-action">The Wkipedia on Conways game of life</a>
+                    <a href="https://conwaylife.com/" class="list-group-item list-group-item-action">Another online version</a>
+                    <a href="https://conwaylife.com/wiki/Scholar" class="list-group-item list-group-item-action">The 383P7H2V0 or orthogonal spaceship</a>
+                    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="list-group-item list-group-item-action">Another wikipedia on "Conways Game of Life</a>
+                    <a href="http://existentialcomics.com/comic/249" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Something completely different</a>
+                    <button type="button" class="close" role="presentation" aria-label="Close">
+											<span aria-hidden="true" onclick="HideAllElements('references')">&times;</span>
+										</button>
             </div>
+            </p>
         </div>
-        <div class="col-sm">
-            Generation <span id=generation>0</span>
+        <div id="root" class="world">
         </div>
-        <div>
-        </div>
-        <script type="module" src="../lib/common.js"></script>
-        <script type="module" src="../js/main.js">
-        </script>
+        Generation
+        <span id=generation>0</span>
     </div>
+    <script type="module" src="../lib/common.js"></script>
+    <script type="module" src="../js/main.js"></script>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
 </body>
 
 </html>

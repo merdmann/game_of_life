@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     Common.cell[x][y] = Common.neighbors(x, y) < 3 ? 'd' : 'X';
                     Common.cell[x][y] = Common.neighbors(x, y) > 3 ? 'X' : 'X';
                 }
-                if (cell[x][y] === 'd') { // if dead it will be reansimated
-                    cell[x][y] = neighbors(x, y) === 3 ? 'X' : ' ';
+                if (Common.cell[x][y] === 'd') { // if dead it will be reansimated
+                    Common.cell[x][y] = neighbors(x, y) === 3 ? 'X' : ' ';
                 }
             }
     }
@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
         Common.clear();
         show();
         let g = parseInt(document.getElementById("generation").innerText, 10)
-        console.log(typeof(g))
         g++
         document.getElementById("generation").innerText = g
         itterrate();

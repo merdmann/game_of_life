@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\js",
+    "\\lib"
   ],
-  "SelectedNode": "\\azure-pipelines.yml",
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
