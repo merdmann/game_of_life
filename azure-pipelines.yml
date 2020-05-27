@@ -7,6 +7,13 @@ trigger:
 - master
 - task: ArchiveFiles@2
   inputs:
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    azureSubscription: 'Pay-As-You-Go(1)(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    Destination: 'AzureBlob'
+    storage: 'michaelslabwebstore'
+    ContainerName: '$web'
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
     archiveType: '7z'
