@@ -32,6 +32,9 @@ trigger:
     azureSubscription: '5f32c139-c39a-4e3f-9cb4-a786b8dc7885'
     appName: 'game_of_life'
     package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
-
+- task: ExtractFiles@1
+  inputs:
+    archiveFilePatterns: '*.zip'
+    cleanDestinationFolder: true
 
 
