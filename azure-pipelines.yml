@@ -37,4 +37,13 @@ trigger:
     archiveFilePatterns: '*.zip'
     cleanDestinationFolder: true
 
+## adding copy
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    azureSubscription: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    Destination: 'AzureBlob'
+    storage: 'michaelslabwebstore'
+
+
 
