@@ -20,9 +20,11 @@ steps:
 - task: AzureFileCopy@4
   inputs:
     SourcePath: '$(build.sourcesDirectory)'
-    azureSubscription: '5f32c139-c39a-4e3f-9cb4-a786b8dc7885'
+    azureSubscription: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
     Destination: 'AzureBlob'
     storage: 'michaelslabwebstore'
+
+
 
     
 
