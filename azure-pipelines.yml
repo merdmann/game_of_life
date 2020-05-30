@@ -10,7 +10,8 @@ trigger:
     rootFolderOrFile: '$(Build.BinariesDirectory)'
     includeRootFolder: true
     archiveType: '7z'
-    archiveFile: '- task: AzureFileCopy@4
+    archiveFile: '
+ task: AzureFileCopy@4
   inputs:
     SourcePath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     Destination: 'AzureBlob'
@@ -18,7 +19,6 @@ trigger:
     ContainerName: 'web$'
     replaceExistingArchive: true
     verbose: true
-
 
  -task: AzureWebApp@1
  inputs:
