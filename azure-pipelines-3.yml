@@ -1,0 +1,30 @@
+# HTML
+# Archive your static HTML project and save it with the build record.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'vs2017-win2016'
+
+steps:
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(build.sourcesDirectory)'
+    includeRootFolder: false
+- task: PublishBuildArtifacts@1
+
+## adding copy
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '$(build.sourcesDirectory)'
+    azureSubscription: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    Destination: 'AzureBlob'
+    storage: 'michaelslabwebstore'
+
+
+
+    
+
