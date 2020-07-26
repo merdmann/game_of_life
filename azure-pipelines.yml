@@ -2,7 +2,13 @@
   inputs:
     azureSubscription: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
     Destination: 'AzureBlob'
+    storage: '- task: AzureFileCopy@4
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(5f32c139-c39a-4e3f-9cb4-a786b8dc7885)'
+    Destination: 'AzureBlob'
     storage: 'michaelslabwebstore'
+    ContainerName: 'michaelslabwebstore'
+    BlobPrefix: 'web''
 trigger:
 - master
 - task: ArchiveFiles@2
