@@ -35,16 +35,21 @@
             </script>
             <h1>Conways game of Life</h1>
             <P>Below a 10 by 10 array of cells is shown. Each cell is either alife or dead. Each iterations is counted as so called generation.</P>
-            <div id="references" class="list-group" aria-hidden="false">
-                <p>More information of the game can be found here
-                    <a href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens" class="list-group-item list-group-item-action">The Wkipedia on Conways game of life</a>
-                    <a href="https://conwaylife.com/" class="list-group-item list-group-item-action">Another online version</a>
-                    <a href="https://conwaylife.com/wiki/Scholar" class="list-group-item list-group-item-action">The 383P7H2V0 or orthogonal spaceship</a>
-                    <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" class="list-group-item list-group-item-action">Another wikipedia on "Conways Game of Life</a>
-                    <a href="http://existentialcomics.com/comic/249" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Something completely different</a>
-                    <button type="button" class="close" role="presentation" aria-label="Close">
-											<span aria-hidden="true" onclick="HideAllElements('references')">&times;</span>
-										</button>
+            <div class="info-box" id="references" >
+                <div id="references">
+                    <li>More information about the game can be found here</li>
+                    <ul>
+                        <li><a href="https://de.wikipedia.org/wiki/Conways_Spiel_des_Lebens">The Wkipedia on Conways game of life</a></li>
+                        <li><a href="https://conwaylife.com/">Another online version</a></li>
+                        <li><a href="https://conwaylife.com/wiki/Scholar">The 383P7H2V0 or orthogonal spaceship</a></li>
+                        <li><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Another wikipedia on "Conways Game of Life</a></li>
+                        <li><a href="http://existentialcomics.com/comic/249">Something completely different</a></li>
+                        <button type="button" class="close">
+							<span  onclick="HideAllElements('references')"> &times;</span>
+						</button>
+                    </ul>
+                    </li>
+                </div>
             </div>
             </p>
         </div>
