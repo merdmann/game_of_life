@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
 
     function itterrate() {
-        for (var i = 0; i < 10; ++i)
-            for (var j = 0; j < 10; ++j) {
+        for (var i = 1; i < 9; ++i)
+            for (var j = 1; j < 9; ++j) {
                 let x = i % 10;
                 let y = j % 10;
 
