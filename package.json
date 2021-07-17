@@ -1,0 +1,29 @@
+{
+  "name": "game_of_life",
+  "version": "1.0.0",
+  "description": "Conways game of life ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jest": "^27.0.6",
+    "jest-cli": "^27.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "type": "module",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/merdmann/game_of_life.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/merdmann/game_of_life/issues"
+  },
+  "homepage": "https://github.com/merdmann/game_of_life#readme"
+}
